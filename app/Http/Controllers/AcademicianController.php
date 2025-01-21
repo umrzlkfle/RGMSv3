@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Academician;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 
@@ -44,6 +45,7 @@ class AcademicianController extends Controller
         ]);
 
         Academician::create($validated);
+        User::create($validated);
         return redirect()->route('academician.index')->with('success','Academician created successfully.');
     }
 
@@ -87,6 +89,6 @@ class AcademicianController extends Controller
     public function destroy(Academician $academician)
     {
         $academician->delete();
-        return redirect()->route('academician.index')->with('success','Academician deleted successfully.');
+        return redirect()->route('academician.index')->with('success','Academician deleted successfully.'); 
     }
 }

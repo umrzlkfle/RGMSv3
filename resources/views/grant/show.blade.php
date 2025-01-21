@@ -47,6 +47,8 @@
                         {{ $grant->durationMonth }}
                     </td>
                 </tr>
+
+
             </table>
         </div>
         <div>
